@@ -29,15 +29,3 @@ Given('I am located in the home page of start americas together') do
     expect(page).to have_css('.MuiChip-label', text: string)
   end
   
-  Then('I should see a notification that says {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-
-  Then('I should see the email field with {string}') do |string|
-    sleep(1)
-    expect(page).to have_selector('#email-helper-text', text: string)
-  end
-  
-  Then('The password field with {string}') do |string|
-    expect(page).to have_selector('#password-helper-text', text: string)
-  end
