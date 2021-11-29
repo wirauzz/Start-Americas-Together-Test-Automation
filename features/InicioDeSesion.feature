@@ -4,32 +4,19 @@ As one of the following roles (Lider, Voluntario and Core Team)
 I want to login to the app
 
 @testLider
-Scenario: Login as a leader        
+Scenario: Login as a <userType>        
 	Given I am located in the home page of start americas together
 	And I click the "LOGIN" button 
-	When I fill the email with "lider@gmail.com" and the password with "123456"
+	When I fill the email with "<email>" and the password with "123456"
 	And I click the button INICAR SESION
-	Then if I click on Profile i should see "Pepe" as my name "Peponcio" as my last name
-    And "lider" as my role
+	Then if I click on Profile i should see "<firstName>" as my name "<lastName>" as my last name
+    And "<userType>" as my role
 
-@testVoluntario
-Scenario: Login as a volunteer        
-	Given I am located in the home page of start americas together
-	And I click the "LOGIN" button 
-	When I fill the email with "voluntario@gmail.com" and the password with "123456"
-	And I click the button INICAR SESION
-	Then if I click on Profile i should see "Roberto" as my name "Estropajo" as my last name
-    And "voluntario" as my role
-
-@testCoreTeam
-Scenario: Login as a volunteer        
-	Given I am located in the home page of start americas together
-	And I click the "LOGIN" button 
-	When I fill the email with "coreteam@gmail.com" and the password with "123456"
-	And I click the button INICAR SESION
-	Then if I click on Profile i should see "Core" as my name "Team" as my last name
-    And "core team" as my role
-
+Examples:
+| userType 	 | email  	 			| firstName 	| lastName |
+| lider 	 | lider@gmail.com 		| 	Pepe		| Peponcio |
+| voluntario | voluntario@gmail.com |	Roberto	 	| Estropajo|
+| core team	 | coreteam@gmail.com 	|	Core	 	| Team|
 
 @testWrongPassword
 Scenario: Failed login: wrong password       

@@ -1,5 +1,5 @@
 Given('I am located in the home page of start americas together') do
-    page.driver.browser.manage.window.maximize
+    page.driver.browser.manage.window.minimize
     visit 'https://testing-start.web.app/'
   end
   
