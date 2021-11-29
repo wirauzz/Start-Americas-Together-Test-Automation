@@ -16,4 +16,5 @@ Scenario: Delete self account as a leader user
     Examples:
     | email                 | password | 
     |  voluntario@gmail.com |  123456  |
-   
+    |  lider@gmail.com      |  123456  |	  
+    |  coreteam@gmail.com   |  123456  |
