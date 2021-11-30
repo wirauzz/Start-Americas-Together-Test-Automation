@@ -3,7 +3,7 @@ In order to use the app Start Americas together
 As one of the following roles (Lider, Voluntario and Core Team)
 I want to login to the app
 
-@testLider
+@testLogins
 Scenario: Login as a <userType>        
 	Given I am located in the home page of start americas together
 	And I click the "LOGIN" button 
@@ -15,7 +15,7 @@ Scenario: Login as a <userType>
 Examples:
 | userType 	 | email  	 			| firstName 	| lastName |
 | lider 	 | lider@gmail.com 		| 	Pepe		| Peponcio |
-| voluntario | voluntario@gmail.com |	Roberto	 	| Estropajo|
+| voluntario | voluntario@gmail.com |	a	 	| |
 | core team	 | coreteam@gmail.com 	|	Core	 	| Team|
 
 @testWrongPassword
