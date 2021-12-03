@@ -25,5 +25,11 @@ Scenario: Empty Fields
 	And I click the "LOGIN" button 
 	And I click the button CREAR CUENTA NUEVA
     When I click the CREAR CUENTA START button
-    Then all the fields should show me a warning
+    Then all the fields should show me the folloing warnings
 
+    |  email               | No valido | 
+    |  username             | Campo requerido  |
+    |  lastname          | Campo requerido |	  
+    |  cellphone                | Campo requerido  |   
+    |  password          | Debe contener 6 caracteres y un número |	  
+    |  confirmPass                | Contraseñas no coinciden  |   
