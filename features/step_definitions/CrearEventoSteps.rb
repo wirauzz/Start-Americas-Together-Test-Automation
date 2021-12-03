@@ -1,54 +1,47 @@
-Given('I am located in the home page of Start americas together') do
+Given(/^I am located at the home page of Start Americas Together/) do
     page.driver.browser.manage.window.maximize
     visit 'https://testing-start.web.app/'
   end
   
-  Given('I click on the {string} button') do |string|
+  Given(/^I click on the "([^"]*)" button/) do |string|
     click_on(string)
     sleep 2
   end
   
-  Given('I fill the email space with {string} and the password space with {string}') do |string, string2|
+  Given(/^I fill the Email space with "([^"]*)" and the Pass space with "([^"]*)"/) do |string, string2|
     fill_in 'email', with: string
     fill_in 'password', with: string2
   end
   
-  Given('I click on {string} tab') do |string|
+  Given(/^I click on the "([^"]*)" tab/) do |string|
     click_on(string)
     sleep 2
   end
   
-  When('I click {string} button') do |string|
+  When(/^I click "([^"]*)" button/) do |string|
     find(:xpath, '/html/body/div/div/div[1]/div[2]/a[1]').click
     sleep 2
   end
   
-  When('I fill the name of event field with {string}') do |string|
-    fill_in 'nombre_evento', with: string
+  When(/^I enter the fields as show below$/) do |table|
+    data = table.rows_hash
+    data.each_pair do |key, value|
+      case key
+      when "Nombre del evento:"
+      fill_in 'nombre_evento', :with => value
+      when "Descripcion del evento:"
+      fill_in 'descripcion_evento', :with => value
+      when "Modalidad"
+      select value, :from => "modalidad_evento"
+      when "Lugar del evento:"
+      fill_in 'lugar_evento', :with => value
+      when "Fecha del evento:"
+      fill_in 'fecha_evento', :with => value
+      end
+    end
   end
-  
-  When('I fill the description of event field with {string}') do |string|
-    fill_in 'descripcion_evento', with: string
-  end
-  
-#   When('I choose the option {string} in box modality') do |string|
-#     find(:xpath, '/html/body/div/div/form/div[3]/select/option[2]').click
-#     sleep 1
-#   end
 
-  When('I fill the place field with {string}') do |string|
-    fill_in 'lugar_evento', with: string
-  end
-
-  Then('I click the button {string}') do |string|
+  Then(/^I click on the button "([^"]*)"/) do |string|
     find(:xpath, '/html/body/div/div/form/div[4]/button[1]').click
     sleep 2
   end
-  
-#   When('And I choose todays date by clicking on the {string} option in the "Fecha" box ') do |string|
-#     fill_in 'lugar_evento', with: string
-#   end
-  
-#   Then('a message that says {string} appears on screen') do |errorMessage|
-#     page.driver.browser.switch_to.alert.errorMessage
-#   end
