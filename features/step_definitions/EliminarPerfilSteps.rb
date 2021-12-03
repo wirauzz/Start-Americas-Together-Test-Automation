@@ -21,10 +21,24 @@ Given('I am located in the home page of Start americas together') do
   end
   
   When('I click {string} button') do |string|
-    find(:xpath, '/html/body/div/div/div/div/div[2]/div[1]/div/div[1]/div/span/div/div[1]/div[2]/div/div[2]/button[2]').click
+    click_on(string)
     sleep 2
   end
+  #confirm deletion
+  When('I accept the confirmation message') do
+    page.driver.browser.switch_to.alert.accept
+  end
+
+  Then('a message that says {string} appears on screen') do |deleteNotification|
+    page.driver.browser.switch_to.alert.text.should eq(deleteNotification)
+    page.driver.browser.switch_to.alert.accept
+  end
+
+  #cancel deletion
+  When('I reject the confirmation message') do
+    page.driver.browser.switch_to.alert.dismiss
+  end
   
-  Then('a message that says {string} appears on screen') do |errorMessage|
-    page.driver.browser.switch_to.alert.errorMessage
+  Then('I can still see my profile on screen') do
+    expect(page).to have_content("voluntario")
   end
