@@ -22,7 +22,7 @@ Given('I am located in the home page of Start americas together') do
   
   When('I click {string} button') do |string|
     click_on(string)
-    sleep 2
+    sleep 3
   end
   #confirm deletion
   When('I accept the confirmation message') do
@@ -32,6 +32,7 @@ Given('I am located in the home page of Start americas together') do
   Then('a message that says {string} appears on screen') do |deleteNotification|
     page.driver.browser.switch_to.alert.text.should eq(deleteNotification)
     page.driver.browser.switch_to.alert.accept
+    sleep 1
   end
 
   #cancel deletion

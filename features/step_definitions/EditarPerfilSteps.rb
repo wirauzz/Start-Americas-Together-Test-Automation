@@ -22,14 +22,16 @@ Given('I fill all the edit profile fields as shown below') do |table|
         fill_in 'ciudad_de_recidencia', :with => value
       when "Teléfono"
         fill_in 'telefono', :with => value
-      when "Género"
+      when "Genero"
         select value, :from => "genero"
+        fill_in 'numero_contacto_de_emergencia', :with => ""
       when "Nombre de contacto de emergencia"
         fill_in 'nombre_contacto_de_emergencia', :with => value
       when "Relación con contacto de emergencia"
         fill_in 'relacion_contacto_de_emergencia', :with => value
       when "Número de contacto de emergencia"
         fill_in 'numero_contacto_de_emergencia', :with => value
+        fill_in 'Mi pequeña descripción', :with => ""
       when "Mi pequeña descripción"
         fill_in 'descripcion_personal', :with => value
       end

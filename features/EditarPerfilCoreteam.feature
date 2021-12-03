@@ -17,18 +17,18 @@ Feature: Edit profile as Coreteam
 			| Nombre      | Marcelo |
 			| Apellido | Alvarez Quiroga |
 			| Fecha de nacimiento | 02\08\1990 |
-			| Ocupacion | Colegio |
+			| Ocupacion | Universidad |
 			| Profesion u oficio | Ingeniero de sistemas |
 			| Mis intereses | Medio ambiente |
 			| Mis cualidades |  Liderazgo |
-			| Pais de residencia | Argentina |
-			| Ciudad de residencia | Buenos Aires |
-			| Teléfono | 78532647 |
-			| Género: | Masculino |
-			| Nombre de contacto de emergencia | Maria Aranibar Aguirre |
-			| Relación con contacto de emergencia | Tia |
-			| Número de contacto de emergencia | 74125893 |
-			| Mi pequeña descripción |  Del claro - Fade AwayJW Francis - Good Time (11:56) |
+			| Pais de residencia | Peru |
+			| Ciudad de residencia | Lima |
+			| Teléfono | 87456321 |
+			| Genero | Masculino |
+			| Nombre de contacto de emergencia | Pedro Aredondo Gutierrez |
+			| Relación con contacto de emergencia | Papa |
+			| Número de contacto de emergencia | 45236658 |
+			| Mi pequeña descripción |  Angus & Julia Stone - Love Song (Lyric Video) |
 		When I click on the "Guardar" button
 		Then a message that says "actualizado correctamente" appears on screen
 		And my personal information was updated

@@ -14,21 +14,21 @@ Feature: Edit profile as lider
 		Given I click on "Perfil" tab
 		And I click on the "Editar Perfil" button
 		And I fill all the edit profile fields as shown below
-			| Nombre      | Marcelo |
-			| Apellido | Alvarez Quiroga |
-			| Fecha de nacimiento | 02\08\1990 |
+			| Nombre      | Armando |
+			| Apellido | Paredes Casas |
+			| Fecha de nacimiento | 01\07\2000 |
 			| Ocupacion | Colegio |
-			| Profesion u oficio | Ingeniero de sistemas |
-			| Mis intereses | Medio ambiente |
-			| Mis cualidades |  Liderazgo |
+			| Profesion u oficio | Ingeniero financiero |
+			| Mis intereses | Trabajo social |
+			| Mis cualidades |  Organizacion |
 			| Pais de residencia | Argentina |
 			| Ciudad de residencia | Buenos Aires |
 			| Teléfono | 78532647 |
-			| Género: | Masculino |
+			| Genero | Otro |
 			| Nombre de contacto de emergencia | Maria Aranibar Aguirre |
 			| Relación con contacto de emergencia | Tia |
-			| Número de contacto de emergencia | 74125893 |
-			| Mi pequeña descripción |  Del claro - Fade AwayJW Francis - Good Time (11:56) |
+			| Número de contacto de emergencia | 78566214 |
+			| Mi pequeña descripción | opyright (C) 2016 Microsoft Corporation. All rights reserved. |
 		When I click on the "Guardar" button
 		Then a message that says "actualizado correctamente" appears on screen
 		And my personal information was updated
