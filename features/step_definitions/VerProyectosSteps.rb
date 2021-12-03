@@ -21,8 +21,4 @@ Then('I should see the following 4 projects') do |table|
         pCount = 1
         divCount += 1
     end
-
-
-
-
 end
