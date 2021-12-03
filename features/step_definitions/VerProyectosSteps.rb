@@ -6,6 +6,7 @@ end
 When('I click Proyectos') do
   click_on("Proyectos")
 end
+
 Then('I should see the following 4 projects') do |table|
     data = table.hashes
     xpathBase = '/html/body/div/div/div[2]'

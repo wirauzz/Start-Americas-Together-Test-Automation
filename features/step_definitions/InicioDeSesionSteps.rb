@@ -3,7 +3,7 @@ Given('I am located in the home page of start americas together') do
     visit 'https://testing-start.web.app/'
   end
   
-  Given('I click the {string} button') do |string|
+  Given('I click the {string} button on login') do |string|
     click_on("Login")
     sleep 1
   end
@@ -29,3 +29,14 @@ Given('I am located in the home page of start americas together') do
     expect(page).to have_css('.MuiChip-label', text: string)
   end
   
+  Then('I should see a notification that says {string}') do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Then('I should see the email field with {string}') do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Then('The password field with {string}') do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+  end

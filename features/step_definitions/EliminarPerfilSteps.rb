@@ -24,6 +24,7 @@ Given('I am located in the home page of Start americas together') do
     click_on(string)
     sleep 3
   end
+  
   #confirm deletion
   When('I accept the confirmation message') do
     page.driver.browser.switch_to.alert.accept

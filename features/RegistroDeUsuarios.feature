@@ -8,7 +8,7 @@ I want to register to the page
 @testRegister
 Scenario: Register a user        
 	Given I am located in the home page of start americas together
-	And I click the "LOGIN" button 
+	And I click the "LOGIN" button on register
 	And I click the button CREAR CUENTA NUEVA
 	When I fill the email field with "test1@gmail.com"
     And I fill the name field with "Juan"
@@ -22,7 +22,7 @@ Scenario: Register a user
 @testEmptyFields
 Scenario: Empty Fields       
 	Given I am located in the home page of start americas together
-	And I click the "LOGIN" button 
+	And I click the "LOGIN" button on register
 	And I click the button CREAR CUENTA NUEVA
     When I click the CREAR CUENTA START button
     Then all the fields should show me the folloing warnings

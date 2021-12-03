@@ -10,7 +10,7 @@ Scenario: Create event
 	And I fill the Email space with "<email>" and the Pass space with "<password>"
 	And I click on the "Iniciar Sesión" button
     And I click on the "Eventos" tab
-    And I click "Crear Evento" button
+    And I click "Crear Evento" button on eventos
     When I enter the fields as show below
 	|Nombre del evento: 	        | Evento Prueba Core Team                        |
     |Descripcion del evento: 	    | Descripcion evento prueba Core Team            |

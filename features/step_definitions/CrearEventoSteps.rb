@@ -3,7 +3,7 @@ Given(/^I am located at the home page of Start Americas Together/) do
     visit 'https://testing-start.web.app/'
   end
   
-  Given(/^I click on the "([^"]*)" button/) do |string|
+  Given('I click the {string} button')do |string|
     click_on(string)
     sleep 2
   end
@@ -18,7 +18,7 @@ Given(/^I am located at the home page of Start Americas Together/) do
     sleep 2
   end
   
-  When(/^I click "([^"]*)" button/) do |string|
+  When(/^I click "([^"]*)" button on eventos/) do |string|
     find(:xpath, '/html/body/div/div/div[1]/div[2]/a[1]').click
     sleep 2
   end

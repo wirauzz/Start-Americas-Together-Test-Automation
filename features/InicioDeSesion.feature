@@ -6,7 +6,7 @@ I want to login to the app
 @testLogins
 Scenario: Login as a <userType>        
 	Given I am located in the home page of start americas together
-	And I click the "LOGIN" button 
+	And I click the "LOGIN" button on login
 	When I fill the email with "<email>" and the password with "123456"
 	And I click the button INICAR SESION
 	Then if I click on Profile i should see "<firstName>" as my name "<lastName>" as my last name

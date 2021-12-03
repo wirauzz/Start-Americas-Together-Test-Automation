@@ -2,7 +2,11 @@
 Given('I click the button CREAR CUENTA NUEVA') do
     click_on('Crear cuenta nueva')
   end
-  
+
+  Given('I click the {string} button on register') do |string|
+    click_on('Login')
+  end
+
   When('I fill the email field with {string}') do |string|
     fill_in 'email', with: string
   end
@@ -35,7 +39,7 @@ Given('I click the button CREAR CUENTA NUEVA') do
     fill_in 'email', with: "test1@gmail.com"
     fill_in 'password', with: "123456a"
     click_on('Iniciar Sesión')
-    sleep 1
+    sleep 2
     click_on('Perfil')
     expect(page).to have_selector('h6', text: string % string2)
   end
