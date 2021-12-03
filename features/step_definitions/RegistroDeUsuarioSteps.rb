@@ -39,27 +39,32 @@ Given('I click the button CREAR CUENTA NUEVA') do
     click_on('Perfil')
     expect(page).to have_selector('h6', text: string % string2)
   end
+  
 
-
-  Then('all the fields should show me a warning') do
+  Then('all the fields should show me the folloing warnings') do |table|
     xpathBase = '/html/body/div/div/div/div[2]/div[2]/form'
     xpathBase = find(:xpath, xpathBase)
-
+    data = table.rows_hash
     xpathEmail  = "./div[1]/p"
     xpathUsername  = "./div[2]/div[1]/p"
     xpathLastName  = "./div[2]/div[2]/p"
     xpathCellphone  = "./div[3]/p"
     xpathPassword  = "./div[4]/p"
     xpathConfirmPassword  = "./div[5]/p"
-    begin
-      expect(xpathBase.find(:xpath, xpathEmail)).to have_content("No valido")
-      expect(xpathBase.find(:xpath, xpathUsername)).to have_content("Campo requerido")
-      expect(xpathBase.find(:xpath, xpathLastName)).to have_content("Campo requerido")
-      expect(xpathBase.find(:xpath, xpathCellphone)).to have_content("Campo requerido")
-      expect(xpathBase.find(:xpath, xpathPassword)).to have_content("Debe contener 6 caracteres y un número")
-      expect(xpathBase.find(:xpath, xpathConfirmPassword)).to have_content("Contraseñas no coinciden")
-    rescue => exception
-      raise "One of the field isn't showing the warning"
+    data.each_pair do |key, value|
+        case key
+          when "email"
+            expect(xpathBase.find(:xpath, xpathEmail)).to have_content(value)
+          when "username"
+            expect(xpathBase.find(:xpath, xpathUsername)).to have_content(value)
+          when "lastname"
+            expect(xpathBase.find(:xpath, xpathLastName)).to have_content(value)	 	 
+          when "cellphone"
+            expect(xpathBase.find(:xpath, xpathCellphone)).to have_content(value)
+          when "password"
+            expect(xpathBase.find(:xpath, xpathPassword)).to have_content(value)
+          when "confirmPass"
+            expect(xpathBase.find(:xpath, xpathConfirmPassword)).to have_content(value)
+        end      
     end
-    
   end
